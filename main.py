@@ -15,3 +15,15 @@ s.setsockopt(socket.SOL_SIGFOX, socket.SO_RX, False)
 ​
 # send some bytes
 s.send(bytes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]))
+
+# from LIS2HH12 import LIS2HH12
+# import time
+# from Pysense import Pysense
+# py = Pysense()
+# acc = LIS2HH12()
+
+
+# while True:
+#   acceleration = acc.acceleration()
+#   print(acceleration)
+#   time.sleep(3)
