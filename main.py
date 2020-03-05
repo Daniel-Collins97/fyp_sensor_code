@@ -1,6 +1,21 @@
 from network import Sigfox
 import socket
-​
+import struct
+import binascii
+
+def float_to_hex(f):
+  x = str(f)
+  x = x.encode()
+  x = binascii.hexlify(x)
+  return x
+
+def hex_to_str(h):
+  x = binascii.unhexlify(h)
+  x = x.decode()
+  return x
+  
+print(hex_to_str(float_to_hex(1.2345)))
+
 # init Sigfox for RCZ1 (Europe)
 sigfox = Sigfox(mode=Sigfox.SIGFOX, rcz=Sigfox.RCZ1)
 ​
@@ -14,7 +29,9 @@ s.setblocking(True)
 s.setsockopt(socket.SOL_SIGFOX, socket.SO_RX, False)
 ​
 # send some bytes
-s.send(bytes([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]))
+my_str = "hello world"
+my_str_as_bytes = str.encode(my_str)
+# s.send(my_str_as_bytes)
 
 # from LIS2HH12 import LIS2HH12
 # import time
