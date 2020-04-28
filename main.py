@@ -1,5 +1,5 @@
-from network import Sigfox
 from machine import Timer
+from network import Sigfox
 import socket
 import struct
 import binascii
@@ -10,8 +10,8 @@ import time
 
 py = Pysense()
 acc = LIS2HH12()
-values = [2.8, 0.2, 1.534]
-sensorThreshold = 2.8
+values = []
+sensorThreshold = 20
 seconds = 0
 
 # init Sigfox for RCZ1 (Europe)
